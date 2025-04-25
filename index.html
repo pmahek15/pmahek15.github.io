@@ -3,70 +3,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mahek Patel</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <nav class="navbar">
+    <div class="nav-buttons">
+      <a href="https://linkedin.com/in/pmahek15" target="_blank" class="btn">LinkedIn</a>
+      <a href="Mahek Patel Resume 2025.pdf" target="_blank" class="btn">Resume</a>
+    </div>
+  </nav>
 
-  <header>
-    <h1>Mahek Patel</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am a results-driven individual who is passionate about creating dynamic workplaces that foster growth and innovation.
-      With strengths in communication, creativity, and collaborative leadership, I transform organizational challenges into opportunities.
-      I continuously monitor industry trends and cultural shifts to lead innovative initiatives that deliver measurable results.
-      My data-driven approach and commitment to continuous improvement have enabled me to increase operational efficiency, streamline processes,
-      and enhance user experiences across multiple projects. I bring a proactive mindset and proven track record of success to any organization
-      looking to drive positive change and achieve strategic objectives.
-    </p>
+  <section class="hero">
+    <div class="left-photo">
+      <img src="side-image.jpg" alt="Mahek casual photo" />
+    </div>
+    <div class="intro-text">
+      <h1>Hello, I'm</h1>
+      <h2>Mahek Patel</h2>
+      <h3><span class="typing"></span></h3>
+    </div>
+    <div class="right-photo">
+      <img src="profile.jpg" alt="Mahek Patel profile photo" />
+    </div>
   </section>
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <p><strong>Residence Assistant, Rutgers University</strong><br>
-    Aug 2023 – Present, New Brunswick, NJ</p>
-    <ul>
-      <li>Generated and analyzed 200+ weekly reports to improve space utilization and reduce response times.</li>
-      <li>Managed 300+ monthly maintenance requests with a 95% resolution rate within 48 hours.</li>
-      <li>Improved data accuracy by 35% using Rutgers Database Systems.</li>
-    </ul>
-
-    <p><strong>Data Analyst, Indian Cultural Center</strong><br>
-    May 2018 – Present, Edison, NJ</p>
-    <ul>
-      <li>Designed a custom database tracking 5,000+ attendees across 50 annual events.</li>
-      <li>Led a 4-person team in implementing automated backup protocols with 99.9% uptime.</li>
-      <li>Created infographics to identify trends and increase event participation by 40%.</li>
-    </ul>
+  <section class="carousel-section">
+    <h2 class="carousel-title">glimpses of me</h2>
+    <div class="carousel">
+      <img src="carousel1.jpg" alt="carousel image 1" /><img src="carousel2.jpg" alt="carousel image 2" /><img src="carousel3.jpg" alt="carousel image 3" /><img src="carousel4.jpg" alt="carousel image 4" /><img src="carousel5.jpg" alt="carousel image 5" /><img src="carousel6.jpg" alt="carousel image 6" /><img src="carousel7.jpg" alt="carousel image 7" /><img src="carousel8.jpg" alt="carousel image 8" />
+    </div>
   </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>Healthcare Data Migration:</strong> Built AWS S3 system and Terraform-based IaC, reducing deployment time by 60%.</li>
-      <li><strong>Patient Priority Algorithm:</strong> Java-based tool that improved transplant evaluation by 65% with 98% accuracy.</li>
-      <li><strong>Invoice Reconciliation:</strong> Resolved $50K+ invoice conflict by developing discrepancy-tracking process.</li>
-    </ul>
-  </section>
+  <script>
+    const phrases = [
+      "a experience seeker",
+      "inspired by technology",
+      "a cafe enthusiast",
+      "based in NJ",
+      "a kpop enjoyer"
+    ];
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:pmahek15@gmail.com">pmahek15@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/pmahek15/" target="_blank">linkedin.com/in/pmahek15</a></p>
-    <p>Location: North Brunswick, NJ</p>
-    <p><a href="Mahek Patel Resume 2025.pdf" target="_blank">Download My Resume (PDF)</a></p>
-  </section>
+    let currentPhrase = 0;
+    let charIndex = 0;
+    const typingSpan = document.querySelector(".typing");
 
+    function type() {
+      if (charIndex < phrases[currentPhrase].length) {
+        typingSpan.textContent += phrases[currentPhrase].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, 100);
+      } else {
+        setTimeout(erase, 2000);
+      }
+    }
+
+    function erase() {
+      if (charIndex > 0) {
+        typingSpan.textContent = phrases[currentPhrase].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, 50);
+      } else {
+        currentPhrase = (currentPhrase + 1) % phrases.length;
+        setTimeout(type, 500);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      if (phrases.length) setTimeout(type, 1000);
+    });
+  </script>
 </body>
 </html>
