@@ -2,77 +2,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mahek Patel</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="nav-buttons">
-      <a href="https://linkedin.com/in/pmahek15" target="_blank" class="btn">LinkedIn</a>
-      <a href="Mahek Patel Resume 2025.pdf" target="_blank" class="btn">Resume</a>
+  <nav>
+    <div class="logo">Mahek Patel</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
     </div>
   </nav>
 
-  <section class="hero">
-    <div class="left-photo">
-      <img src="side-image.jpg" alt="Mahek casual photo" />
-    </div>
-    <div class="intro-text">
-      <h1>Hello, I'm</h1>
-      <h2>Mahek Patel</h2>
-      <h3><span class="typing"></span></h3>
-    </div>
-    <div class="right-photo">
-      <img src="profile.jpg" alt="Mahek Patel profile photo" />
+  <section id="home" class="hero">
+    <h1>Hi, I'm <span>Mahek Patel</span></h1>
+    <img src="profile.jpg" alt="Profile Picture" class="profile-img">
+    <div class="buttons">
+      <a href="https://www.linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a>
+      <a href="Mahek Patel Resume 2025.pdf" target="_blank">Resume</a>
     </div>
   </section>
 
-  <section class="carousel-section">
-    <h2 class="carousel-title">glimpses of me</h2>
-    <div class="carousel">
-      <img src="carousel1.jpg" alt="carousel image 1" /><img src="carousel2.jpg" alt="carousel image 2" /><img src="carousel3.jpg" alt="carousel image 3" /><img src="carousel4.jpg" alt="carousel image 4" /><img src="carousel5.jpg" alt="carousel image 5" /><img src="carousel6.jpg" alt="carousel image 6" /><img src="carousel7.jpg" alt="carousel image 7" /><img src="carousel8.jpg" alt="carousel image 8" />
-    </div>
+  <section id="projects" class="section">
+    <h2>Projects Coming Soon!</h2>
   </section>
 
-  <script>
-    const phrases = [
-      "a experience seeker",
-      "inspired by technology",
-      "a cafe enthusiast",
-      "based in NJ",
-      "a kpop enjoyer"
-    ];
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <p>HTML | CSS | JavaScript | React | Python</p>
+  </section>
 
-    let currentPhrase = 0;
-    let charIndex = 0;
-    const typingSpan = document.querySelector(".typing");
-
-    function type() {
-      if (charIndex < phrases[currentPhrase].length) {
-        typingSpan.textContent += phrases[currentPhrase].charAt(charIndex);
-        charIndex++;
-        setTimeout(type, 100);
-      } else {
-        setTimeout(erase, 2000);
-      }
-    }
-
-    function erase() {
-      if (charIndex > 0) {
-        typingSpan.textContent = phrases[currentPhrase].substring(0, charIndex - 1);
-        charIndex--;
-        setTimeout(erase, 50);
-      } else {
-        currentPhrase = (currentPhrase + 1) % phrases.length;
-        setTimeout(type, 500);
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", function () {
-      if (phrases.length) setTimeout(type, 1000);
-    });
-  </script>
+  <footer id="contact">
+    <p>Made with ❤️ by Mahek Patel</p>
+  </footer>
 </body>
 </html>
